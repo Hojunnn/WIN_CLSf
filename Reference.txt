@@ -1,0 +1,8 @@
+BR_Auto_API_EXT_pefmod_v7.py
+ - 각 카테고리별로 프로그램들의 api 추출
+
+BR_AUTO_API_EXT_NAME_v1-1.py
+ - 카테고리별로 모든프로그램 api를 한번에 뽑아서 중복제거한 csv파일 생성
+
+BR_Auto_API_EXT_Name_DataSet_v3-1.py
+ - 마지막으로 DataSet 생성
