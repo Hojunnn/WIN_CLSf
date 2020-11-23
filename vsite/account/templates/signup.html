@@ -20,7 +20,7 @@
         a:link {color: black; }
         a:visited {color : black; }
         a:link { text-decoration:none;}
-        .k {width: 500px; height: 45px; margin-top: 30px; border: 0px; font-size: 20px; background-color: rgb(87, 87, 87); color: white;}
+        .k {width: 524px; height: 54px; margin-top: 30px; border: 0px; font-size: 20px; background-color: #3D7EA6; color: white;}
         .center {
         margin: auto;
         width: 50%;
@@ -76,22 +76,22 @@
       <div class="col-lg-2">
         <h1 class="my-4">Category</h1>
         <div class="list-group">
-          <a href="#" class="list-group-item active">Audio Player</a>
-          <a href="#" class="list-group-item">Browser</a>
-          <a href="#" class="list-group-item">FTP</a>
-          <a href="#" class="list-group-item">Game</a>
-          <a href="#" class="list-group-item">Image Viewer</a>
-          <a href="#" class="list-group-item">Network</a>
-          <a href="#" class="list-group-item">Office</a>
-          <a href="#" class="list-group-item">Security</a>
-          <a href="#" class="list-group-item">social</a>
-          <a href="#" class="list-group-item">Utility</a>
-          <a href="#" class="list-group-item">Video Player</a>
+          <a href="{% url 'category' %}" class="list-group-item">Audio Player</a>
+          <a href="{% url 'category' %}" class="list-group-item">Video Player</a>
+          <a href="{% url 'category' %}" class="list-group-item">Browser</a>
+          <a href="{% url 'category' %}" class="list-group-item">FTP</a>
+          <a href="{% url 'category' %}" class="list-group-item">Game</a>
+          <a href="{% url 'category' %}" class="list-group-item">Image Viewer</a>
+          <a href="{% url 'category' %}" class="list-group-item">Network</a>
+          <a href="{% url 'category' %}" class="list-group-item">Office</a>
+          <a href="{% url 'category' %}" class="list-group-item">Security</a>
+          <a href="{% url 'category' %}" class="list-group-item">Social</a>
+          <a href="{% url 'category' %}" class="list-group-item">Utility</a>
         </div>
       </div>
 
-  <!-- /.software -->
-  <div class="center">
+      <!-- /.software -->
+      <div class="center">
   <span>
   <div style="padding: 50px;">
     <div>
@@ -103,11 +103,11 @@
             <form method="POST" action="{% url 'signup' %}">
                 {% csrf_token %}
                 <br>
-                <input type="text" name="username" placeholder="아이디" style="padding: 10px; width: 500px; height: 40px; font-size: 20px;">
+                <input type="text" name="username" placeholder="아이디" style="padding: 10px; width: 500px; height: 30px; font-size: 20px;">
                 <br>
-                <input type="text" name="password" placeholder="비밀번호"style="padding: 10px; width: 500px; height: 40px; margin-top: 30px; font-size: 20px;">
+                <input type="text" name="password" placeholder="비밀번호"style="padding: 10px; width: 500px; height: 30px; margin-top: 30px; font-size: 20px;">
                 <br>
-                <input type="text" name="confirm" placeholder="비밀번호 확인"style="padding: 10px; width: 500px; height: 40px; margin-top: 30px; font-size: 20px;">
+                <input type="text" name="confirm" placeholder="비밀번호 확인"style="padding: 10px; width: 500px; height: 30px; margin-top: 30px; font-size: 20px;">
                 <br>
                 <input type="submit" value="회원가입" class="k">
             </form>
@@ -116,7 +116,7 @@
     </div>
   </div>
   </span>
-  </div>
+          </div>
 
 </div>
   </div>
