@@ -9,8 +9,10 @@ def my_view(request):
     # Handle file upload
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
+        print("파일")
         if form.is_valid():
-            newdoc = Document(docfile=request.FILES['docfile'])
+            newdoc = Document(docfile=request.FILES['docfile'],name=request.POST['name'],category=request.POST['category'])
+            print(request.POST)
             newdoc.save()
 
             # Redirect to the document list after POST

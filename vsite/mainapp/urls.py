@@ -1,8 +1,9 @@
+from django.conf.urls import url
 from django.urls import path
 from . import views
 
 urlpatterns = [
     path('',views.get, name='home'),
-    path('new/', views.new , name='new'),
-    path('category/', views.category , name='category'),
+    path('category/', views.get , name='category'),
+    url(r'^download/(?P<area>.+)/$', views.new,name='new'),
 ]

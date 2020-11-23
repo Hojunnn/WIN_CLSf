@@ -90,10 +90,9 @@
       </div>
       <!-- /.col-lg-3 -->
       <div class="col-lg-9">
-
         <div class="card mt-4">
           <div class="card-body">
-            <h3 class="card-title"><img src="../static/mainapp/ico/kakaotalk.png" alt="" width="60" height="60"> 카카오톡</h3>
+            <h3 class="card-title"><img src="../static/mainapp/ico/1.ico" alt="" width="60" height="60"> 카카오톡</h3>
             <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733;</span>
             4.0 stars
           </div>
@@ -114,7 +113,9 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
             <small class="text-muted">Posted by Anonymous on 3/1/17</small>
             <hr>
-            <a href="#" class="btn btn-success">Download</a>
+            {% for i in upload_file %}
+            <a href="/media/{{ i.docfile }}/" class="btn btn-success">Download</a>
+            {% endfor %}
           </div>
         </div>
         <!-- /.card -->

@@ -92,22 +92,21 @@
             </div>
         </div>
         <!-- /.software -->
-        <div class="col-lg-8" style="margin-right: auto; margin-left: auto; margin-top: 70px;">
+        <div class="col-lg-8" style="margin-top: 70px;">
             <form method="get" action="/search">
                 <input type="text" name="search" placeholder="Search for software"
                        style="padding: 10px; width: 500px; height: 50px; font-size: 20px;">
                 <input type="submit" value="Search" class="k">
             </form>
             {% if up_list %}
-            All documents in the database:
             <ul>
                 {% for document in up_list %}
-                <a href="/media/{{ document.docfile }}">
+                <a href="download/{{ document.name }}/">
                     <div style="width: 150px; height: 300px; float: left; margin-right: 30px; margin-top: 15px; margin-bottom: 15px;">
-                        <img class="card-img-top img-fluid" src="./static/mainapp/ico/1.ico" alt="">
+                        <img class="card-img-top img-fluid" src="./static/mainapp/ico/1.ico" alt="" width="50px" height="50px">
                         <div class="card-body">
                             <hr size="5" noshade="">
-                            <h7 class="card-title">{{ document.docfile }}</h7>
+                            <h7 class="card-title">{{ document.name }}</h7><br>
                             <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
                             <br>4.0 stars
                         </div>
