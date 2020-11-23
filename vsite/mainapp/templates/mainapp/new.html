@@ -48,11 +48,17 @@
             </form>
           </li>
 
+          <li class="nav-item">
+            <a class="nav-link" href="/upload">Upload</a>
+          </li>
+
           {% else %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'login' %}">Login</a>
           </li>
           {% endif %}
+
+
 
         </ul>
       </div>
@@ -67,17 +73,17 @@
       <div class="col-lg-3">
         <h1 class="my-4">Category</h1>
         <div class="list-group">
-          <a href="{% url 'category' %}" class="list-group-item">Audio Player</a>
-          <a href="{% url 'category' %}" class="list-group-item">Video Player</a>
-          <a href="{% url 'category' %}" class="list-group-item">Browser</a>
-          <a href="{% url 'category' %}" class="list-group-item">FTP</a>
-          <a href="{% url 'category' %}" class="list-group-item">Game</a>
-          <a href="{% url 'category' %}" class="list-group-item">Image Viewer</a>
-          <a href="{% url 'category' %}" class="list-group-item">Network</a>
-          <a href="{% url 'category' %}" class="list-group-item">Office</a>
-          <a href="{% url 'category' %}" class="list-group-item">Security</a>
-          <a href="{% url 'category' %}" class="list-group-item">Social</a>
-          <a href="{% url 'category' %}" class="list-group-item">Utility</a>
+          <a href="/category" class="list-group-item">Audio Player</a>
+          <a href="/category" class="list-group-item">Video Player</a>
+          <a href="/category"  class="list-group-item">Browser</a>
+          <a href="/category"  class="list-group-item">FTP</a>
+          <a href="/category"  class="list-group-item">Game</a>
+          <a href="/category"  class="list-group-item">Image Viewer</a>
+          <a href="/category"  class="list-group-item">Network</a>
+          <a href="/category"  class="list-group-item">Office</a>
+          <a href="/category"  class="list-group-item">Security</a>
+          <a href="/category"  class="list-group-item">Social</a>
+          <a href="/category"  class="list-group-item">Utility</a>
 
 
         </div>

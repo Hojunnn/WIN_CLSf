@@ -18,6 +18,13 @@ def new(request):
     }
     return HttpResponse(template.render(context, request))
 
+def new(request):
+    template = loader.get_template('mainapp/new.html')
+    context = {
+        'latest_question_list': "test",
+    }
+    return HttpResponse(template.render(context, request))
+
 def category(request):
     template = loader.get_template('mainapp/category.html')
     context = {
