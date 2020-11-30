@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>AI를 활용한 소프트웨어 카테고리 분류</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href='{% static "mainapp/vendor/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href='{% static "mainapp/css/shop-homepage.css" %}' rel="stylesheet">
+
+  <style>
+    a:link {color: black; }
+    a:visited {color : black; }
+    a:link { text-decoration:none;}
+    .k {width: 100px; height: 50px; margin-top: 30px; border: 0px; font-size: 20px; background-color: rgba(50, 47, 56, 0.932); color: white;}
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}">회광반조</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'home' %}">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <!-- /.account -->
+          {% if user.is_authenticated %}
+          <li class="nav-item active">
+            <a class="nav-link">{{ user.username }}님</a>
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link" href="javascript:{document.getElementById('logout').submit()}" style="color: rgb(170, 170, 170);">로그아웃</a>
+            <form id="logout" method="POST" action="{% url 'logout' %}">
+              {% csrf_token %} <input type="hidden" />
+            </form>
+          </li>
+
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+          </li>
+          {% endif %}
+          <li class="nav-item">
+            <a class="nav-link" href="/upload">Upload</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Content -->
+  <br>
+  <div style="padding: 70px;">
+    <div class="row">
+      <!-- /.left-side -->
+      <div class="col-lg-2" >
+        <h1 class="my-4">Category</h1>
+        <div class="list-group">
+          <a href="#" class="list-group-item active">Audio Player</a>
+          <a href="#" class="list-group-item">Browser</a>
+          <a href="#" class="list-group-item">FTP</a>
+          <a href="#" class="list-group-item">Game</a>
+          <a href="#" class="list-group-item">Image Viewer</a>
+          <a href="#" class="list-group-item">Network</a>
+          <a href="#" class="list-group-item">Office</a>
+          <a href="#" class="list-group-item">Security</a>
+          <a href="#" class="list-group-item">social</a>
+          <a href="#" class="list-group-item">Utility</a>
+          <a href="#" class="list-group-item">Video Player</a>
+        </div>
+      </div>
+      <!-- /.software -->
+      <div class="col-lg-8" style="margin-right: auto; margin-left: auto; margin-top: 70px;">
+          <!-- List of uploaded documents -->
+          {% if documents %}
+          All documents in the database:
+          <ul>
+              {% for document in documents %}
+              <li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a></li>
+              {% endfor %}
+          </ul>
+          {% else %}
+          <p>No documents.</p>
+          {% endif %}
+
+          <!-- Upload form. Note enctype attribute! -->
+          <form action="{% url " my-view
+          " %}" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ message }}
+          <p>{{ form.non_field_errors }}</p>
+
+          <p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+
+          <p>
+              {{ form.docfile.errors }}
+              {{ form.docfile }}
+          </p>
+
+          <p><input type="submit" value="Upload"/></p>
+          </form>
+
+
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src='{% static "mainapp/vendor/jquery/jquery.min.js" %}'></script>
+  <script src='{% static "mainapp/vendor/popper/popper.min.js" %}'></script>
+  <script src='{% static "mainapp/vendor/bootstrap/js/bootstrap.min.js" %}'></script>
+
+</body>
+
+</html>
