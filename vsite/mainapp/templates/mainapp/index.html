@@ -78,32 +78,19 @@
         <div class="col-lg-2">
             <h1 class="my-4">Category</h1>
             <div class="list-group">
-                <a href="/category" class="list-group-item">Audio Player</a>
-                <a href="/category" class="list-group-item">Video Player</a>
-                <a href="/category" class="list-group-item">Browser</a>
-                <a href="/category" class="list-group-item">FTP</a>
-                <a href="/category" class="list-group-item">Game</a>
-                <a href="/category" class="list-group-item">Image Viewer</a>
-                <a href="/category" class="list-group-item">Network</a>
-                <a href="/category" class="list-group-item">Office</a>
-                <a href="/category" class="list-group-item">Security</a>
-                <a href="/category" class="list-group-item">Social</a>
-                <a href="/category" class="list-group-item">Utility</a>
+                {% for cat in category %}
+                <a href="/category/{{cat}}" class="list-group-item">{{cat}}</a>
+                {% endfor %}
             </div>
         </div>
         <!-- /.software -->
         <div class="col-lg-8" style="margin-top: 70px;">
-            <form method="get" action="/search">
-                <input type="text" name="search" placeholder="Search for software"
-                       style="padding: 10px; width: 500px; height: 50px; font-size: 20px;">
-                <input type="submit" value="Search" class="k">
-            </form>
             {% if up_list %}
             <ul>
                 {% for document in up_list %}
                 <a href="download/{{ document.name }}/">
                     <div style="width: 150px; height: 300px; float: left; margin-right: 30px; margin-top: 15px; margin-bottom: 15px;">
-                        <img class="card-img-top img-fluid" src="./static/mainapp/ico/1.ico" alt="" width="50px" height="50px">
+                        <img class="card-img-top img-fluid" src="./static/mainapp/ico/4.ico" alt="" width="50px" height="50px">
                         <div class="card-body">
                             <hr size="5" noshade="">
                             <h7 class="card-title">{{ document.name }}</h7><br>
@@ -118,92 +105,6 @@
             <p>No docum</p>
             {% endif %}
 
-
-
-
-
-<!--            <a href='new'>-->
-<!--                <div style="width: 150px; height: 300px; float: left; margin-right: 30px; margin-top: 15px; margin-bottom: 15px;">-->
-<!--                    <img class="card-img-top img-fluid" src="./static/mainapp/ico/1.ico" alt="">-->
-<!--                    <div class="card-body">-->
-<!--                        <hr size="5" noshade="">-->
-<!--                        <h7 class="card-title">Program Name</h7>-->
-<!--                        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>-->
-<!--                        <br>4.0 stars-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </a>-->
-<!--            <a href='new'>-->
-<!--                <div style="width: 150px; height: 300px; float: left; margin-right: 30px; margin-top: 15px; margin-bottom: 15px;">-->
-<!--                    <img class="card-img-top img-fluid" src="./static/mainapp/ico/1.ico" alt="">-->
-<!--                    <div class="card-body">-->
-<!--                        <hr size="5" noshade="">-->
-<!--                        <h7 class="card-title">Program Name</h7>-->
-<!--                        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>-->
-<!--                        <br>4.0 stars-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </a>-->
-
-<!--            <a href='new'>-->
-<!--                <div style="width: 150px; height: 300px; float: left; margin-right: 30px; margin-top: 15px; margin-bottom: 15px;">-->
-<!--                    <img class="card-img-top img-fluid" src="./static/mainapp/ico/1.ico" alt="">-->
-<!--                    <div class="card-body">-->
-<!--                        <hr size="5" noshade="">-->
-<!--                        <h7 class="card-title">Program Name</h7>-->
-<!--                        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>-->
-<!--                        <br>4.0 stars-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </a>-->
-
-<!--            <a href='new'>-->
-<!--                <div style="width: 150px; height: 300px; float: left; margin-right: 30px; margin-top: 15px; margin-bottom: 15px;">-->
-<!--                    <img class="card-img-top img-fluid" src="./static/mainapp/ico/1.ico" alt="">-->
-<!--                    <div class="card-body">-->
-<!--                        <hr size="5" noshade="">-->
-<!--                        <h7 class="card-title">Program Name</h7>-->
-<!--                        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>-->
-<!--                        <br>4.0 stars-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </a>-->
-
-<!--            <a href='new'>-->
-<!--                <div style="width: 150px; height: 300px; float: left; margin-right: 30px; margin-top: 15px; margin-bottom: 15px;">-->
-<!--                    <img class="card-img-top img-fluid" src="./static/mainapp/ico/1.ico" alt="">-->
-<!--                    <div class="card-body">-->
-<!--                        <hr size="5" noshade="">-->
-<!--                        <h7 class="card-title">Program Name</h7>-->
-<!--                        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>-->
-<!--                        <br>4.0 stars-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </a>-->
-
-<!--            <a href='new'>-->
-<!--                <div style="width: 150px; height: 300px; float: left; margin-right: 30px; margin-top: 15px; margin-bottom: 15px;">-->
-<!--                    <img class="card-img-top img-fluid" src="./static/mainapp/ico/1.ico" alt="">-->
-<!--                    <div class="card-body">-->
-<!--                        <hr size="5" noshade="">-->
-<!--                        <h7 class="card-title">Program Name</h7>-->
-<!--                        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>-->
-<!--                        <br>4.0 stars-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </a>-->
-
-<!--            <a href='new'>-->
-<!--                <div style="width: 150px; height: 300px; float: left; margin-right: 30px; margin-top: 15px; margin-bottom: 15px;">-->
-<!--                    <img class="card-img-top img-fluid" src="./static/mainapp/ico/1.ico" alt="">-->
-<!--                    <div class="card-body">-->
-<!--                        <hr size="5" noshade="">-->
-<!--                        <h7 class="card-title">Program Name</h7>-->
-<!--                        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>-->
-<!--                        <br>4.0 stars-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </a>-->
 
         </div>
 
