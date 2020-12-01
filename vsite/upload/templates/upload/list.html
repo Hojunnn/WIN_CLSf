@@ -21,7 +21,7 @@
        a:link {color: black; }
         a:visited {color : black; }
         a:link { text-decoration:none;}
-        .k {width: 524px; height: 54px; margin-top: 30px; border: 0px; font-size: 20px; background-color: #3D7EA6; color: white;}
+        .k {width: 400px; height: 54px; margin-top: 30px; border: 0px; font-size: 20px; background-color: #3D7EA6; color: white;}
         .center {
         margin: auto;
         width: 50%;
@@ -82,39 +82,20 @@
       <div class="col-lg-2" >
         <h1 class="my-4">Category</h1>
         <div class="list-group">
-          <a href="/category" class="list-group-item">Audio Player</a>
-          <a href="/category" class="list-group-item">Video Player</a>
-          <a href="/category"  class="list-group-item">Browser</a>
-          <a href="/category"  class="list-group-item">FTP</a>
-          <a href="/category"  class="list-group-item">Game</a>
-          <a href="/category"  class="list-group-item">Image Viewer</a>
-          <a href="/category"  class="list-group-item">Network</a>
-          <a href="/category"  class="list-group-item">Office</a>
-          <a href="/category"  class="list-group-item">Security</a>
-          <a href="/category"  class="list-group-item">Social</a>
-          <a href="/category"  class="list-group-item">Utility</a>
+          {% for cat in category_name %}
+          <a href="../category/{{cat}}" class="list-group-item">{{cat}}</a>
+          {% endfor %}
         </div>
       </div>
 
       <!-- /.software -->
       <div class="center">
 
-      <div class="col-lg-8" style="margin-right: auto; margin-left: auto; margin-top: 70px;">
-          {% if documents %}
-          All documents in the database:
-          <ul>
-              {% for document in documents %}
-              <li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a></li>
-              {% endfor %}
-          </ul>
-          {% else %}
-          <p>No documents.</p>
-          {% endif %}
+      <div class="col-lg-8" style=" margin-left: 50px; padding-left:10px">
 
         <!-- Upload form. Note enctype attribute! -->
         <form action="{% url 'my-view' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            {{ message }}
             <p>{{ form.non_field_errors }}</p>
 
             <p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
@@ -123,10 +104,9 @@
                 {{ form.docfile.errors }}
                 {{ form.docfile }}
             </p>
-            <input type="text" name="name" placeholder="이름" style="padding: 10px; width: 500px; height: 30px; font-size: 20px;" >
-            <input type="text" name="category" placeholder="카테고리" style="margin-top: 10px; padding: 10px; width: 500px; height: 30px; font-size: 20px;">
+            <input type="text" name="name" placeholder="이름" style="padding: 10px; width: 300px; height: 30px; font-size: 20px;" ><br>
+            <input type="text" name="exe_name" placeholder="실행파일 이름(정확히기재해주세요(확장명포함))" style="margin-top: 10px; padding: 10px; width: 300px; height: 30px; font-size: 20px;">
           <p><input type="submit" value="Upload" class="k"></p>
-          <div style="margin-left: auto;margin-right: auto; text-align: right; width: 524px; height: 45px; margin-top: 15px; border: 0px; font-size: 20px; "></div>
         </form>
 
 

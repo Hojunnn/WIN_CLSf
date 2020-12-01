@@ -17,9 +17,13 @@ def index(request):
 def new(request, area):
     template = loader.get_template('mainapp/new.html')
     upload_file = UploadDocument.objects.filter(name=area)
+    category_name = ["Audio Player", "Video Player", "Browser", "FTP", "Game", "Image Viewer", "Network", "Office",
+                     "Security", "Social", "Utility"]
+
     context = {
         'latest_question_list': "test",
-        'upload_file': upload_file
+        'upload_file': upload_file,
+        'category_name': category_name
     }
     return HttpResponse(template.render(context, request))
 

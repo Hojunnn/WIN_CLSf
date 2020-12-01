@@ -85,13 +85,14 @@
         </div>
         <!-- /.software -->
         <div class="col-lg-8" style="margin-top: 70px;">
+            <h2>{{ area2 }}</h2>
             {% if up_list %}
             <ul>
                 {% for document in up_list %}
                 {% if document.category == area2 %}
                 <a href="../../download/{{ document.name }}/">
                     <div style="width: 150px; height: 300px; float: left; margin-right: 30px; margin-top: 15px; margin-bottom: 15px;">
-                        <img class="card-img-top img-fluid" src="../../static/mainapp/ico/4.ico" alt="" width="50px" height="50px">
+                        <img class="card-img-top img-fluid" src="{{ document.ico }}" alt="" width="30px" height="30px">
                         <div class="card-body">
                             <hr size="5" noshade="">
                             <h7 class="card-title">{{ document.name }}</h7><br>
